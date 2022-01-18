@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmnls="http://www.w3.org/1999/xhtml"
+      xmnls:th="http://themeleaf.org"
+      xmnls:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head th:replace="layout/plantilla :: head">
+        <title>Datos de la Persona</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"/>
+        <section th:replace="layout/editarCliente :: editarCliente"></section>
+
+        <footer th:replace="layout/plantilla :: footer"/>
+
+        <!--ELEMENTO PARA GUARDAR OBJETO  
+            <h2>[[#{persona.formulario}]]</h2>
+            <a th:href="@{/}">[[#{accion.regresar}]]</a>
+            <br/>
+            <form th:action="@{/guardar}" method="post" th:object="${persona}">
+                <input type="hidden" name="idPersona" th:field="*{idPersona}"/>
+                <br/>
+                <label for="nombre">[[#{persona.nombre}]]:</label>
+                <input type="text" name="nombre" th:field="*{nombre}"/>
+                <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></span>
+                <br/>
+                <label for="apellido">[[#{persona.apellido}]]:</label>
+                <input type="text" name="apellido" th:field="*{apellido}"/>
+                <span th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></span>
+                <br/>
+                <label for="email">[[#{persona.email}]]:</label>
+                <input type="text" name="email" th:field="*{email}"/>
+                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+                <br/>
+                <label for="telefono">[[#{persona.telefono}]]:</label>
+                <input type="tel" name="telefono" th:field="*{telefono}"/>
+                <br/>
+                <input type="submit" name="guardar" th:value="#{accion.guardar}"/>
+            </form>
+            <br/>
+            <br/>
+        -->    
+    </body>
+</html>

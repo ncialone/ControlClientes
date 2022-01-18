@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmnls="http://www.w3.org/1999/xhtml"
+      xmnls:th="http://themeleaf.org"
+      xmnls:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head th:replace="layout/plantilla :: head">
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+
+        <header th:replace="layout/plantilla :: header"></header>
+        <section th:replace="layout/botonesAgregar :: botonesAgregar"></section>
+        <section th:replace="layout/listadoClientes :: listadoClientes"></section>
+        <section th:replace="layout/agregarCliente :: agregarCliente"></section>
+        <footer th:replace="layout/plantilla :: footer"></footer>
+    </body>
+</html>
+
+
+<!--TODO ESTE BLOQUE SE CREO MANUALMENTE CUANDO NO HACIAMOS USO DE BOOTSTRAP PARA DAR FORMATO VISUAL
+    SE MOSTRABA EN FORMATO TABLA HTML CON LLAMADO DE CAMPOS/ATRIBUTOS DE THYMELEAF DESDE LA PLANTILLA
+    MESSAGES.PROPERTIES
+
+    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/agregar}">[[#{persona.crear}]]</a>
+    <div th:if="${personas != null and !personas.empty}">
+        <br>
+        <table border="1">
+            <tr>
+                <th>[[#{persona.nombre}]]</th>
+                <th>[[#{persona.apellido}]]</th>
+                <th>[[#{persona.email}]]</th>
+                <th>[[#{persona.telefono}]]</th>
+                <th sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.editar}]]</th>
+                <th sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.eliminar}]]</th>
+            </tr>
+            <tr th:each="persona : ${personas}">
+                <td th:text="${persona.nombre}">Mostrar Nombre </td>
+                <td th:text="${persona.apellido}">Mostrar Apellido</td>
+                <td th:text="${persona.email}">Mostrar Email</td>
+                <td th:text="${persona.telefono}">Mostrar Telefono</td>
+                <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/editar/}+ ${persona.idPersona}"/>[[#{accion.editar}]]</td>
+                <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/eliminar/}+ ${persona.idPersona}"/>[[#{accion.eliminar}]]</td>
+            </tr>
+
+        </table>
+    </div>
+    <div th:if="${personas == null or personas.empty}">
+        [[#{persona.lista-vacia}]]
+    </div>
+-->
